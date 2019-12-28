@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'net.serenity-bdd:serenity-core:2.0.1'
+    testImplementation 'net.serenity-bdd:serenity-junit:2.0.1'
+    testImplementation('junit:junit:4.12')
+    testImplementation('org.assertj:assertj-core:1.7.0')
+
+    implementation 'net.serenity-bdd:serenity-core:2.0.1'
+    implementation 'net.serenity-bdd:serenity-junit:2.0.1'
+    implementation 'net.serenity-bdd:serenity-cucumber:1.9.14'
+    implementation 'net.serenity-bdd:serenity-screenplay:1.9.9'
+    implementation 'net.serenity-bdd:serenity-screenplay-webdriver:1.9.9'
+}
