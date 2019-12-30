@@ -11,21 +11,21 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class BuscarEl implements Task {
 
-    private String producto;
+    private String nombreProducto;
 
-    public BuscarEl(String producto) {
-        this.producto = producto;
+    public BuscarEl(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Enter.theValue(producto).into(TXT_PRODUCTO),
+                Enter.theValue(nombreProducto).into(TXT_PRODUCTO),
                 Click.on(BUSCAR)
         );
     }
 
-    public static BuscarEl producto(String producto) {
-        return instrumented(BuscarEl.class, producto);
+    public static BuscarEl producto(String nombreProducto) {
+        return instrumented(BuscarEl.class, nombreProducto);
     }
 }

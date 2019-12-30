@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.targets.Target;
 public class AgregarAlCarroPage {
 
     public static final Target SELECCIONAR_PRODUCTO = Target.the("Seleccionar producto a buscar")
-            .locatedBy("//*[contains(@class, 'switchable-product-container')]//span[contains(text(), 'Negro')]");
+            .locatedBy("//*[contains(@id, 'catalogue-product-container')]//*[contains(text(), '{0}')]");
 
     public static final Target ANADIR_CARRITO = Target.the("btn añadir al carrito")
             .locatedBy("//button[contains(@id, 'buy-now')]");

@@ -20,7 +20,8 @@ import static co.com.linio.reto.utils.Constantes.PRODUCTO;
 
 public class ComprarLinioStepDefinitions {
 
-    public Producto producto = new Producto();;
+    public Producto producto = new Producto();
+    ;
 
     @Managed(driver = "chrome")
     private WebDriver herBrowser;
@@ -42,7 +43,7 @@ public class ComprarLinioStepDefinitions {
         actor.remember(PRODUCTO, nombreProducto);
         actor.attemptsTo(
                 BuscarEl.producto(nombreProducto),
-                AgregarAlCarroEl.producto(producto)
+                AgregarAlCarroEl.producto(nombreProducto, producto)
         );
     }
 
@@ -52,10 +53,9 @@ public class ComprarLinioStepDefinitions {
                 Ir.A(IR_CARRO_COMPRAS)
         );
 
-        /*actor.should(seeThat()
-                .orComplainWith(ProductoNoAgregadoAlCarro.class, EXCEPTION_CARRO_NO_AGREGADO)
-        );
+        actor.should(
 
-         */
+                //seeThat().orComplainWith(ProductoNoAgregadoAlCarro.class, EXCEPTION_CARRO_NO_AGREGADO)
+        );
     }
 }

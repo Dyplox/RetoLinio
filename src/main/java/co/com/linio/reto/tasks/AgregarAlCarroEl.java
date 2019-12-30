@@ -15,15 +15,17 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 public class AgregarAlCarroEl implements Task {
 
     Producto producto;
+    private String nombreProducto;
 
-    public AgregarAlCarroEl(Producto producto) {
+    public AgregarAlCarroEl(String nombreProducto, Producto producto) {
+        this.nombreProducto = nombreProducto;
         this.producto = producto;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(   // concatenar producto
-                Click.on(SELECCIONAR_PRODUCTO),
+                Click.on(SELECCIONAR_PRODUCTO.of(nombreProducto + "")),
                 Click.on(ANADIR_CARRITO)
         );
 
@@ -39,7 +41,7 @@ public class AgregarAlCarroEl implements Task {
         );
     }
 
-    public static AgregarAlCarroEl producto(Producto producto) {
-        return instrumented(AgregarAlCarroEl.class, producto);
+    public static AgregarAlCarroEl producto(String nombreProducto, Producto producto) {
+        return instrumented(AgregarAlCarroEl.class, nombreProducto, producto);
     }
 }
