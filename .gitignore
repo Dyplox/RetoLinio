@@ -34,7 +34,8 @@
 out/
 
 #Serenity
-*/build/
+/build/
+/target/
 .gradle/
 
 #specific files
