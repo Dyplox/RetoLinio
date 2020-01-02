@@ -54,7 +54,6 @@ public class ComprarLinioStepDefinitions {
         );
 
         actor.should(
-
                 //seeThat().orComplainWith(ProductoNoAgregadoAlCarro.class, EXCEPTION_CARRO_NO_AGREGADO)
         );
     }
