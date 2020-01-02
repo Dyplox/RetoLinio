@@ -6,6 +6,7 @@ import co.com.linio.reto.tasks.AgregarAlCarroEl;
 import co.com.linio.reto.tasks.BuscarEl;
 import co.com.linio.reto.tasks.Ir;
 import co.com.linio.reto.userinterface.LinioHomePage;
+import co.com.linio.reto.questions.Validar;
 import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
@@ -21,7 +22,6 @@ import static co.com.linio.reto.utils.Constantes.PRODUCTO;
 public class ComprarLinioStepDefinitions {
 
     public Producto producto = new Producto();
-    ;
 
     @Managed(driver = "chrome")
     private WebDriver herBrowser;
@@ -51,6 +51,10 @@ public class ComprarLinioStepDefinitions {
     public void seValidaQueFueAgregadoExitosamenteAlCarroDeCompra() {
         actor.attemptsTo(
                 Ir.A(IR_CARRO_COMPRAS)
+        );
+
+        actor.attemptsTo(
+                Ensure.that(Validar.carro()).isEqualTo(Producto)
         );
 
         actor.should(
