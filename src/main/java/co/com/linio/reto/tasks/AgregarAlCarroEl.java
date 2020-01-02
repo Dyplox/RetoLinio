@@ -1,5 +1,6 @@
 package co.com.linio.reto.tasks;
 
+import co.com.linio.reto.interactions.Esperar;
 import co.com.linio.reto.models.Producto;
 import co.com.linio.reto.questions.ValidarExistencia;
 import net.serenitybdd.screenplay.Actor;
@@ -31,12 +32,15 @@ public class AgregarAlCarroEl implements Task {
                 Click.on(ANADIR_CARRITO)
         );
 
+        Esperar.unMomento(3);
         actor.remember(MENSAJE_INFO_PRODUCTO_POPUP, Text.of(MENSAJE_CARRO).viewedBy(actor).asString());
 
         actor.attemptsTo(
+                Esperar.unMomento(1),
                 Check.whether(
                         ValidarExistencia.producto(actor.recall(MENSAJE_INFO_PRODUCTO_POPUP)))
                         .andIfSo(
+                                Esperar.unMomento(3),
                                 ObtenerInfo.delProducto(producto)
                         ),
                 Click.on(CERRAR_POPUP)

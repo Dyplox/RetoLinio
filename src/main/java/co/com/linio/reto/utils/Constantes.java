@@ -2,7 +2,7 @@ package co.com.linio.reto.utils;
 
 public class Constantes {
 
-    public static final String PRODUCTO = "Nombre Producto deseado";
+    //public static final String PRODUCTO = "Nombre Producto deseado";
     public static final String MENSAJE_INFO_PRODUCTO_POPUP = "-MENSAJE INFO PRODUCTO-";
 
     // info producto validar carrito

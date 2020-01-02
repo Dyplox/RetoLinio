@@ -10,9 +10,6 @@ public class AgregarAlCarroPage {
     public static final Target ANADIR_CARRITO = Target.the("btn añadir al carrito")
             .locatedBy("//button[contains(@id, 'buy-now')]");
 
-    public static final Target ALERTA_CARRITO = Target.the("alert añadir al carrito")
-            .locatedBy("//div[contains(@class, 'alert-header')]");
-
     public static final Target CERRAR_POPUP = Target.the("Cerrar alert")
             .locatedBy("//*[contains(@class, 'icon header-icon-close')]");
 
