@@ -27,7 +27,6 @@ public class AgregarAlCarroEl implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
-                // concatena para buscar el producto deseado
                 Click.on(SELECCIONAR_PRODUCTO.of(nombreProducto + "")),
                 Click.on(ANADIR_CARRITO)
         );

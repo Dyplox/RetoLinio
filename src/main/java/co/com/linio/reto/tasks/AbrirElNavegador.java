@@ -17,7 +17,7 @@ public class AbrirElNavegador implements Task {
 	}
 
 	@Override
-	@Step("{0} opens the browser on HomePage of Google")
+	@Step("{0} opens the browser on HomePage of Linio")
 	public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Open.browserOn(page));
     }
