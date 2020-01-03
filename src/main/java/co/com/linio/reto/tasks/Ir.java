@@ -19,9 +19,7 @@ public class Ir implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Esperar.unMomento(2),
-                Click.on(page),
-                Esperar.unMomento(2)
+                Click.on(page)
         );
     }
 
