@@ -3,9 +3,11 @@ package co.com.linio.reto.interactions;
 import co.com.linio.reto.models.Producto;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.questions.Visibility;
 
+import static co.com.linio.reto.userinterface.AgregarAlCarroPage.CERRAR_POPUP;
 import static co.com.linio.reto.userinterface.CarroCompraPage.NOMBRE_PRODUCTO;
 import static co.com.linio.reto.userinterface.CarroCompraPage.VALOR_PRODUCTO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
@@ -23,9 +25,12 @@ public class LLamarInfo implements Interaction {
 
         Esperar.unMomento(4);
         if (Visibility.of(NOMBRE_PRODUCTO).viewedBy(actor).asBoolean()) {
-            producto.setNombreProducto(Text.of(NOMBRE_PRODUCTO).viewedBy(actor).asString());
-            producto.setValorProducto(Text.of(VALOR_PRODUCTO).viewedBy(actor).asString());
-            Esperar.unMomento(5);
+            while (producto.getNombreProducto() == null && Visibility.of(NOMBRE_PRODUCTO).viewedBy(actor).asBoolean()) {
+                producto.setNombreProducto(Text.of(NOMBRE_PRODUCTO).viewedBy(actor).asString());
+                producto.setValorProducto(Text.of(VALOR_PRODUCTO).viewedBy(actor).asString());
+            }
+            System.out.println(producto.getNombreProducto());
+            System.out.println(producto.getValorProducto());
         }
     }
 

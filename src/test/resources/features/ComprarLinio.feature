@@ -14,7 +14,7 @@ Característica: Proceso para realizar una compra en Linio
       | Scooter Eléctrico Xiaomi M365 |
       | Game of Thrones               |
       | Drácula                       |
-      | Zapatillas Adidas             |
+      ##| Zapatillas Adidas             |
       | Xiaomi Mi 9T PRO 128GB        |
       | Sillas Gamer                  |
       | Reloj Pared                   |

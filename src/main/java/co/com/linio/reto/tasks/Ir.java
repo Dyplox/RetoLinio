@@ -1,5 +1,6 @@
 package co.com.linio.reto.tasks;
 
+import co.com.linio.reto.interactions.Esperar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -18,7 +19,9 @@ public class Ir implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(page)
+                Esperar.unMomento(2),
+                Click.on(page),
+                Esperar.unMomento(2)
         );
     }
 
