@@ -18,7 +18,7 @@ public class ObtenerInfo implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Esperar.unMomento(1), LLamarInfo.deLaPagina(producto));
+        actor.attemptsTo(Esperar.unMomento(2), LLamarInfo.deLaPagina(producto));
     }
 
     public static ObtenerInfo delProducto(Producto producto) {

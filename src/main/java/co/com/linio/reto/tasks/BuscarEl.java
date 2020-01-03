@@ -11,7 +11,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class BuscarEl implements Task {
 
-    private String nombreProducto;
+    private String nombreProducto = "Cualquier Cosa";
 
     public BuscarEl(String nombreProducto) {
         this.nombreProducto = nombreProducto;

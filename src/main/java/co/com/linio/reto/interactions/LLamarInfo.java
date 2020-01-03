@@ -21,7 +21,7 @@ public class LLamarInfo implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        Esperar.unMomento(3);
+        Esperar.unMomento(4);
         if (Visibility.of(NOMBRE_PRODUCTO).viewedBy(actor).asBoolean()) {
             producto.setNombreProducto(Text.of(NOMBRE_PRODUCTO).viewedBy(actor).asString());
             producto.setValorProducto(Text.of(VALOR_PRODUCTO).viewedBy(actor).asString());

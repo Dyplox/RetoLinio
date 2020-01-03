@@ -54,7 +54,7 @@ public class ComprarLinioStepDefinitions {
         actor.attemptsTo(
                 Esperar.unMomento(1),
                 // Ensure.that(producto.getNombreProducto()).isEqualTo(Text.of(NOMBRE_PRODUCTO_CARRO).viewedBy(actor).asString()),
-                Ensure.that(producto.getNombreProducto().trim()).contains(Text.of(NOMBRE_PRODUCTO_CARRO).viewedBy(actor).asString()),
+                Ensure.that(producto.getNombreProducto().trim().toLowerCase()).contains(Text.of(NOMBRE_PRODUCTO_CARRO).viewedBy(actor).asString().toLowerCase()),
                 //Ensure.that(producto.getValorProducto()).isEqualTo(Text.of(VALOR_PRODUCTO_CARRO).viewedBy(actor).asString()),
                 Ensure.that(producto.getValorProducto().trim()).contains(Text.of(VALOR_PRODUCTO_CARRO).viewedBy(actor).asString())
         );

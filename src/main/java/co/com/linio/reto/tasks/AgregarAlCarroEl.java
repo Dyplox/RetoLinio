@@ -36,13 +36,14 @@ public class AgregarAlCarroEl implements Task {
         actor.remember(MENSAJE_INFO_PRODUCTO_POPUP, Text.of(MENSAJE_CARRO).viewedBy(actor).asString());
 
         actor.attemptsTo(
-                Esperar.unMomento(1),
+                Esperar.unMomento(2),
                 Check.whether(
                         ValidarExistencia.producto(actor.recall(MENSAJE_INFO_PRODUCTO_POPUP)))
                         .andIfSo(
-                                Esperar.unMomento(3),
+                                Esperar.unMomento(2),
                                 ObtenerInfo.delProducto(producto)
                         ),
+                Esperar.unMomento(3),
                 Click.on(CERRAR_POPUP)
         );
     }
